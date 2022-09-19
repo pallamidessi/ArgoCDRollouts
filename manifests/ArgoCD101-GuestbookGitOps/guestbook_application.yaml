@@ -4,6 +4,10 @@ metadata:
   name: guestbook-gitops
   namespace: argocd
 spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   destination:
     namespace: default
     server: https://kubernetes.default.svc
